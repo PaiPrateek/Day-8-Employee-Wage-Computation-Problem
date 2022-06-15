@@ -10,7 +10,18 @@ namespace EmployeeWageComputationProblem
     {
         public static void CheckEmpWage()
         {
-            Console.WriteLine("Welcome to Employee Wage Computation Problem");
+            int FullTime = 1;
+            int Absent = 0;
+            Random random = new Random();
+            int Attendence = random.Next(0, 2);
+            if (Attendence==FullTime)
+            {
+                Console.WriteLine("Employee is Present");
+            }
+            else
+            {
+                Console.WriteLine("Employee is Absent");
+            }
         }
     }
 }
