@@ -12,15 +12,21 @@ namespace EmployeeWageComputationProblem
         {
             int FullTime = 1;
             int Absent = 0;
+            int PartTime = 2;
             int EmpWagePerHour = 20;
             int EmpHrs = 0;
             int EmpWage = 0;
             Random random = new Random();
-            int Attendence = random.Next(0, 2);
+            int Attendence = random.Next(0, 3);
             if (Attendence==FullTime)
             {
-                Console.WriteLine("Employee is Present");
+                Console.WriteLine("Employee is Present (Full Time)");
                 EmpHrs = 8;
+            }
+            else if(Attendence==PartTime)
+            {
+                Console.WriteLine("Employee is Present (Part Time) ");
+                EmpHrs = 4;
             }
             else
             {
