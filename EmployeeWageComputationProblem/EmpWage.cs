@@ -18,20 +18,20 @@ namespace EmployeeWageComputationProblem
             int EmpWage = 0;
             Random random = new Random();
             int Attendence = random.Next(0, 3);
-            if (Attendence==FullTime)
+            switch (Attendence)
             {
-                Console.WriteLine("Employee is Present (Full Time)");
-                EmpHrs = 8;
-            }
-            else if(Attendence==PartTime)
-            {
-                Console.WriteLine("Employee is Present (Part Time) ");
-                EmpHrs = 4;
-            }
-            else
-            {
-                Console.WriteLine("Employee is Absent");
-                EmpHrs = 0;
+                case 0:
+                    Console.WriteLine("Employee is Absent");
+                    EmpHrs = 0;
+                    break;
+                case 1:
+                    Console.WriteLine("Employee is Present (Full Time)");
+                    EmpHrs = 8;
+                    break;
+                case 2:
+                    Console.WriteLine("Employee is Present (Part Time) ");
+                    EmpHrs = 4;
+                    break;
             }
             EmpWage = EmpHrs * EmpWagePerHour;
             Console.WriteLine("Employee Daily Wage is : " +EmpWage);
