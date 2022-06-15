@@ -15,12 +15,15 @@ namespace EmployeeWageComputationProblem
             int PartTime = 2;
             int EmpWagePerHour = 20;
             int WorkingDaysPerMonth = 20;
+            int WorkingHourPerMonth = 100;
             int EmpHrs = 0;
             int EmpWage = 0;
             int TotaklEmpWage = 0;
             int TotalWorkingDays = 0;
+            int TotalWorkinhHours = 0;
             int FullDay=0, AbsentDay=0, PartDay=0;
-            for (int day = 0; day < WorkingDaysPerMonth; day++)
+
+            while(TotalWorkinhHours<=WorkingHourPerMonth && TotalWorkingDays<WorkingDaysPerMonth)
             {
                 Random random = new Random();
                 int Attendence = random.Next(0, 3);
@@ -44,10 +47,18 @@ namespace EmployeeWageComputationProblem
                 }
                 Console.WriteLine("...............................");
                 EmpWage = EmpHrs * EmpWagePerHour;
+                TotalWorkinhHours += EmpHrs;
+                TotalWorkingDays++;
                 TotaklEmpWage += EmpWage;
                 Console.WriteLine("Employee Daily Wage is : " + EmpWage);
 
             }
+            Console.WriteLine("...............................");
+            Console.WriteLine("...............................");
+            Console.WriteLine("Working Day is :"+TotalWorkingDays);
+            Console.WriteLine("Working Hours is :" + TotalWorkinhHours);
+            Console.WriteLine("...............................");
+            Console.WriteLine("...............................");
             Console.WriteLine("Full Day Presence is :"+FullDay);
             Console.WriteLine("Part Time Presnece is : " + PartDay);
             Console.WriteLine("Absent is :" + AbsentDay);
